@@ -21,7 +21,7 @@ export CGO_ENABLED=0
 MODE="${MODE:-release}"
 
 # build cluster-api binaries
-make -pvnu -c cluster-api -f ./cluster-api/Makefile all
+make -pvnu -c ../cluster-api -f ../cluster-api/Makefile all
 copy_cluster_api_to_mirror
 
 GIT_COMMIT="${SOURCE_GIT_COMMIT:-$(git rev-parse --verify 'HEAD^{commit}')}"
