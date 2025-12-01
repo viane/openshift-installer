@@ -1,6 +1,6 @@
 TARGET_OS_ARCH:=$(shell go env GOOS)_$(shell go env GOARCH)
 
-PROVSUBDIRS:=	$(foreach DIR,$(shell find providers -maxdepth 1 -mindepth 1 -type d),$(subst providers/,,$(DIR)))
+PROVSUBDIRS:=	$(foreach DIR,$(shell gfind providers -maxdepth 1 -mindepth 1 -type d),$(subst providers/,,$(DIR)))
 
 GO_MOD_TIDY_TARGETS:=	$(foreach DIR,$(PROVSUBDIRS), $(subst $(DIR),go-mod-tidy-vendor.$(DIR),$(DIR)))
 GO_BUILD_TARGETS:=	$(foreach DIR,$(PROVSUBDIRS), $(subst $(DIR),go-build.$(DIR),$(DIR)))
