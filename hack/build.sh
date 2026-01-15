@@ -7,7 +7,7 @@ mkdir -p ../cluster-api/providers # hack to speed up build
 # zOS USS compile specific var&parm
 export __ZOS_TRACE=1
 export __GOZ_EXTRA_ARGS='-v'
-unset COMPATH_PATH
+export COMPATH_PATH="$(which gmake)"
 . /global/zopen/etc/zopen-config
 eval $(/global/golang/1.24/etc/goz-env)
 
