@@ -24,7 +24,7 @@ if [ "$(version "${current_go_version#go}")" -lt "$(version "$minimum_go_version
      exit 1
 fi
 
-#export CGO_ENABLED=1
+export CGO_ENABLED=1
 MODE="${MODE:-release}"
 
 # build cluster-api binaries
