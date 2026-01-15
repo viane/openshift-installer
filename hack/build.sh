@@ -2,13 +2,13 @@
 
 set -ex
 
+mkdir -p ../cluster-api/providers # hack to speed up build
+
+# zOS USS compile specific var&parm
 export __ZOS_TRACE=1
 export __GOZ_EXTRA_ARGS='-v'
-
-mkdir -p ../cluster-api/providers
-
 unset COMPATH_PATH
-
+. /global/zopen/etc/zopen-config
 eval $(/global/golang/1.24/etc/goz-env)
 
 # Source the Cluster API build script.
