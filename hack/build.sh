@@ -7,6 +7,8 @@ export __GOZ_EXTRA_ARGS='-v'
 
 mkdir -p ../cluster-api/providers
 
+unset COMPATH_PATH
+
 # Source the Cluster API build script.
 # shellcheck source=hack/build-cluster-api.sh
 . "$(dirname "$0")/build-cluster-api.sh"
@@ -22,7 +24,7 @@ if [ "$(version "${current_go_version#go}")" -lt "$(version "$minimum_go_version
      exit 1
 fi
 
-export CGO_ENABLED=1
+#export CGO_ENABLED=1
 MODE="${MODE:-release}"
 
 # build cluster-api binaries
