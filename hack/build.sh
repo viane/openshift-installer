@@ -2,6 +2,9 @@
 
 set -ex
 
+export __ZOS_TRACE=1
+export __GOZ_EXTRA_ARGS='-v'
+
 mkdir -p ../cluster-api/providers
 
 # Source the Cluster API build script.
