@@ -2,6 +2,8 @@
 
 set -ex
 
+mkdir -p ../cluster-api/providers
+
 # Source the Cluster API build script.
 # shellcheck source=hack/build-cluster-api.sh
 . "$(dirname "$0")/build-cluster-api.sh"
