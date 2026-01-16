@@ -1,6 +1,7 @@
 #!/bin/sh
 
-set -ex
+set +e
+set -x
 
 mkdir -p ../cluster-api/providers # hack to speed up build
 
@@ -16,6 +17,7 @@ export COMPILER_PATH="/global/cnw/v2r2/openxl/bin"
 
 eval $(/global/golang/1.24/etc/goz-env)
 
+set -e
 # Source the Cluster API build script.
 # shellcheck source=hack/build-cluster-api.sh
 . "$(dirname "$0")/build-cluster-api.sh"
