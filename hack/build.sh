@@ -8,6 +8,8 @@ mkdir -p ../cluster-api/providers # hack to speed up build
 export __ZOS_TRACE=1
 export __GOZ_EXTRA_ARGS='-v'
 export COMPATH_PATH="/global/cnw/v2r2/openxl/bin" 
+export COMPILER_PATH="/global/cnw/v2r2/openxl/bin"
+
 # ls /global/cnw/v2r2/openxl/bin
 # ibm-clang                    ibm-clang++64                ibm-clang64
 # ibm-clang++                  ibm-clang-listing-formatter
