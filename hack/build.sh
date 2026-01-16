@@ -7,8 +7,7 @@ mkdir -p ../cluster-api/providers # hack to speed up build
 # zOS USS compile specific var&parm
 export __ZOS_TRACE=1
 export __GOZ_EXTRA_ARGS='-v'
-export COMPATH_PATH="$(which gmake)"
-. /global/zopen/etc/zopen-config
+export COMPATH_PATH="/global/cnw/v2r2/openxl/bin/ibm-clang"
 eval $(/global/golang/1.24/etc/goz-env)
 
 # Source the Cluster API build script.
