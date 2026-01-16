@@ -7,7 +7,11 @@ mkdir -p ../cluster-api/providers # hack to speed up build
 # zOS USS compile specific var&parm
 export __ZOS_TRACE=1
 export __GOZ_EXTRA_ARGS='-v'
-export COMPATH_PATH="/global/cnw/v2r2/openxl/bin/ibm-clang"
+export COMPATH_PATH="/global/cnw/v2r2/openxl/bin" 
+# ls /global/cnw/v2r2/openxl/bin
+# ibm-clang                    ibm-clang++64                ibm-clang64
+# ibm-clang++                  ibm-clang-listing-formatter
+
 eval $(/global/golang/1.24/etc/goz-env)
 
 # Source the Cluster API build script.
@@ -25,7 +29,7 @@ if [ "$(version "${current_go_version#go}")" -lt "$(version "$minimum_go_version
      exit 1
 fi
 
-# export CGO_ENABLED=1
+export CGO_ENABLED=1
 MODE="${MODE:-release}"
 
 # build cluster-api binaries
